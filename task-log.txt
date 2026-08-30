@@ -1,0 +1,8 @@
+[DONE] 1. Project inspection, folder structure and packages
+[DONE] 2. MainLayout and responsive shell
+[DONE] 3. Personal Data full vertical slice
+[DONE] 4. Emails full vertical slice
+[DONE] 5. Addresses full vertical slice
+[DONE] 6. Phone full vertical slice
+[DONE] 7. Client composition and routing
+[DONE] 8. Final integration and verification

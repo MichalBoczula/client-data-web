@@ -1,0 +1,38 @@
+<mat-card appearance="outlined" class="personal-data-card">
+  <mat-card-header>
+    <mat-card-title>Personal Data</mat-card-title>
+    <mat-card-subtitle>Update the client's identity information.</mat-card-subtitle>
+  </mat-card-header>
+
+  @if (loading()) {
+    <mat-progress-bar mode="indeterminate" aria-label="Loading personal data" />
+  }
+
+  <mat-card-content>
+    @if (error(); as errorMessage) {
+      <p class="error-banner" role="alert">{{ errorMessage }}</p>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" autocomplete="given-name" />
+        @if (form.controls.firstName.hasError('required')) {
+          <mat-error>First Name is required.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" autocomplete="family-name" />
+        @if (form.controls.lastName.hasError('required')) {
+          <mat-error>Last Name is required.</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="actions">
+        <button mat-flat-button type="submit" [disabled]="loading()">Save changes</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
