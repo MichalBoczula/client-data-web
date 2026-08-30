@@ -4,6 +4,10 @@ import { provideState, provideStore } from '@ngrx/store';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
+import { EmailRepositoryPort } from './features/client/emails/domain/interfaces/email-repository.port';
+import { EmailMockRepository } from './features/client/emails/infrastructure/api/email-mock.repository';
+import { EmailEffects } from './features/client/emails/state/email.effects';
+import { emailFeature } from './features/client/emails/state/email.feature';
 import { PersonalDataRepositoryPort } from './features/client/personal-data/domain/interfaces/personal-data-repository.port';
 import { PersonalDataMockRepository } from './features/client/personal-data/infrastructure/api/personal-data-mock.repository';
 import { PersonalDataEffects } from './features/client/personal-data/state/personal-data.effects';
@@ -15,10 +19,15 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideStore(),
     provideState(personalDataFeature),
-    provideEffects(PersonalDataEffects),
+    provideState(emailFeature),
+    provideEffects(PersonalDataEffects, EmailEffects),
     {
       provide: PersonalDataRepositoryPort,
       useClass: PersonalDataMockRepository,
+    },
+    {
+      provide: EmailRepositoryPort,
+      useClass: EmailMockRepository,
     },
   ],
 };
