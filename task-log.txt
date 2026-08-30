@@ -1,0 +1,5 @@
+[DONE] 1. Project inspection, folder structure and packages
+[DONE] 2. MainLayout and responsive shell
+[DONE] 3. Personal Data full vertical slice
+[DONE] 4. Emails full vertical slice
+[DONE] 5. Addresses full vertical slice
