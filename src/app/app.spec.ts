@@ -14,10 +14,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the client management shell', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, client-data-web');
+    expect(compiled.querySelector('.brand__title')?.textContent).toContain('Client Management');
+    expect(compiled.querySelectorAll('a[mat-list-item]')).toHaveLength(2);
   });
 });

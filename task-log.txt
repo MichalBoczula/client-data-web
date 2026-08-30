@@ -1,1 +1,2 @@
 [DONE] 1. Project inspection, folder structure and packages
+[DONE] 2. MainLayout and responsive shell
