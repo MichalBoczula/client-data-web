@@ -16,6 +16,10 @@ import { PersonalDataRepositoryPort } from './features/client/personal-data/doma
 import { PersonalDataMockRepository } from './features/client/personal-data/infrastructure/api/personal-data-mock.repository';
 import { PersonalDataEffects } from './features/client/personal-data/state/personal-data.effects';
 import { personalDataFeature } from './features/client/personal-data/state/personal-data.feature';
+import { PhoneRepositoryPort } from './features/client/phone/domain/interfaces/phone-repository.port';
+import { PhoneMockRepository } from './features/client/phone/infrastructure/api/phone-mock.repository';
+import { PhoneEffects } from './features/client/phone/state/phone.effects';
+import { phoneFeature } from './features/client/phone/state/phone.feature';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,7 +29,8 @@ export const appConfig: ApplicationConfig = {
     provideState(personalDataFeature),
     provideState(emailFeature),
     provideState(addressFeature),
-    provideEffects(PersonalDataEffects, EmailEffects, AddressEffects),
+    provideState(phoneFeature),
+    provideEffects(PersonalDataEffects, EmailEffects, AddressEffects, PhoneEffects),
     {
       provide: PersonalDataRepositoryPort,
       useClass: PersonalDataMockRepository,
@@ -37,6 +42,10 @@ export const appConfig: ApplicationConfig = {
     {
       provide: AddressRepositoryPort,
       useClass: AddressMockRepository,
+    },
+    {
+      provide: PhoneRepositoryPort,
+      useClass: PhoneMockRepository,
     },
   ],
 };
