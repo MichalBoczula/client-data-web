@@ -4,3 +4,4 @@
 [DONE] 4. Emails full vertical slice
 [DONE] 5. Addresses full vertical slice
 [DONE] 6. Phone full vertical slice
+[DONE] 7. Client composition and routing

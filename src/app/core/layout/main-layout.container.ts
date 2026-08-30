@@ -2,7 +2,6 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -10,11 +9,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { map } from 'rxjs';
 
+import { ClientOverviewComponent } from '../../features/client/presentation/client-overview/client-overview';
+
 @Component({
   selector: 'app-main-layout',
   imports: [
     MatButtonModule,
-    MatCardModule,
     MatIconModule,
     MatListModule,
     MatSidenavModule,
@@ -22,6 +22,7 @@ import { map } from 'rxjs';
     RouterLink,
     RouterLinkActive,
     RouterOutlet,
+    ClientOverviewComponent,
   ],
   templateUrl: './main-layout.container.html',
   styleUrl: './main-layout.container.scss',

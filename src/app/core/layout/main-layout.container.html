@@ -58,29 +58,7 @@
 
     <main class="content">
       @if (isWideDesktop()) {
-        <div class="desktop-grid" aria-label="Client information overview">
-          <mat-card appearance="outlined" class="section-card">
-            <mat-card-header>
-              <mat-icon mat-card-avatar aria-hidden="true">badge</mat-icon>
-              <mat-card-title>Personal Data</mat-card-title>
-              <mat-card-subtitle>Identity and address information</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p>Personal Data and Address features will be composed here.</p>
-            </mat-card-content>
-          </mat-card>
-
-          <mat-card appearance="outlined" class="section-card">
-            <mat-card-header>
-              <mat-icon mat-card-avatar aria-hidden="true">alternate_email</mat-icon>
-              <mat-card-title>Contact Data</mat-card-title>
-              <mat-card-subtitle>Email and phone information</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p>Email and Phone features will be composed here.</p>
-            </mat-card-content>
-          </mat-card>
-        </div>
+        <app-client-overview />
       } @else {
         <div class="routed-content">
           <router-outlet />

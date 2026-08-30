@@ -87,36 +87,9 @@ mat-nav-list a.active-link {
   padding: 32px;
 }
 
-.desktop-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+app-client-overview {
   max-width: 1440px;
   margin: 0 auto;
-}
-
-.section-card {
-  min-height: 280px;
-  border-color: #e2e7f0;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.05);
-}
-
-.section-card mat-card-header {
-  padding: 24px 24px 16px;
-}
-
-.section-card mat-icon[mat-card-avatar] {
-  display: grid;
-  place-items: center;
-  background: #eaf1ff;
-  color: #155eef;
-}
-
-.section-card mat-card-content {
-  padding: 16px 24px 24px;
-  color: #667085;
 }
 
 .routed-content {
