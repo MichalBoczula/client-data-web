@@ -1,0 +1,35 @@
+<mat-card appearance="outlined" class="address-card">
+  <mat-card-header>
+    <mat-card-title>Address</mat-card-title>
+    <mat-card-subtitle>Update the client's primary address.</mat-card-subtitle>
+  </mat-card-header>
+
+  @if (loading()) {
+    <mat-progress-bar mode="indeterminate" aria-label="Loading address" />
+  }
+
+  <mat-card-content>
+    @if (error(); as errorMessage) {
+      <p class="error-banner" role="alert">{{ errorMessage }}</p>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <textarea
+          matInput
+          formControlName="address"
+          autocomplete="street-address"
+          rows="3"
+        ></textarea>
+        @if (form.controls.address.hasError('required')) {
+          <mat-error>Address is required.</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="actions">
+        <button mat-flat-button type="submit" [disabled]="loading()">Save address</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
