@@ -1,76 +1,43 @@
-# Dependencies
-node_modules/
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Angular
-.angular/
-dist/
-out-tsc/
-tmp/
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
 
-# TypeScript
-*.tsbuildinfo
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
 
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# Test coverage
-coverage/
-.nyc_output/
-
-# Environment files
-.env
-.env.*
-!.env.example
-
-# Local Angular environment overrides
-src/environments/environment.local.ts
-src/environments/environment.*.local.ts
-
-# VS Code
+# Visual Studio Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.history/*
 
-# JetBrains / IntelliJ
-.idea/
-*.iml
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
 
-# OS files
+# System files
 .DS_Store
 Thumbs.db
-
-# Package manager caches
-.npm/
-.pnpm-store/
-
-# Yarn
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-
-# ESLint / Stylelint cache
-.eslintcache
-.stylelintcache
-
-# Temporary files
-*.tmp
-*.temp
-*.swp
-*.swo
-
-# Test artifacts
-playwright-report/
-test-results/
-cypress/videos/
-cypress/screenshots/
