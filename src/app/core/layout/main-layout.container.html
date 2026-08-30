@@ -1,0 +1,69 @@
+<mat-sidenav-container class="shell">
+  <mat-sidenav
+    #navigation
+    class="sidebar"
+    [mode]="isNarrowMobile() ? 'over' : 'side'"
+    [opened]="!isNarrowMobile()"
+    [fixedInViewport]="isNarrowMobile()"
+  >
+    <div class="brand">
+      <div class="brand__mark" aria-hidden="true">CM</div>
+      <div>
+        <p class="brand__eyebrow">Admin panel</p>
+        <p class="brand__title">Client Management</p>
+      </div>
+    </div>
+
+    <mat-nav-list aria-label="Client navigation">
+      <a
+        mat-list-item
+        routerLink="/client/personal-data"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="isNarrowMobile() && navigation.close()"
+      >
+        <mat-icon matListItemIcon>person</mat-icon>
+        <span matListItemTitle>Personal Data</span>
+      </a>
+      <a
+        mat-list-item
+        routerLink="/client/contact-data"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="isNarrowMobile() && navigation.close()"
+      >
+        <mat-icon matListItemIcon>contact_mail</mat-icon>
+        <span matListItemTitle>Contact Data</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar">
+      @if (isNarrowMobile()) {
+        <button
+          mat-icon-button
+          type="button"
+          aria-label="Open client navigation"
+          (click)="navigation.open()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+      }
+      <div>
+        <p class="toolbar__eyebrow">Client workspace</p>
+        <h1>Client information</h1>
+      </div>
+    </mat-toolbar>
+
+    <main class="content">
+      @if (isWideDesktop()) {
+        <app-client-overview />
+      } @else {
+        <div class="routed-content">
+          <router-outlet />
+        </div>
+      }
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
